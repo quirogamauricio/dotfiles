@@ -7,8 +7,11 @@ set relativenumber
 set hls
 set path+=** "Tell Vim to search recursively in subfolders of the working directory when using :find
 set wildmenu "Display matching files when tab completing 
+set encoding=utf-8
+set clipboard=unnamedplus
 syntax enable
 let g:powerline_pycmd="py3"
+let mapleader = ""
 filetype plugin on
 filetype indent on
 colorscheme monokai-bold
