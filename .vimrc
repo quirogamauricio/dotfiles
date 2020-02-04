@@ -9,14 +9,22 @@ set path+=** "Tell Vim to search recursively in subfolders of the working direct
 set wildmenu "Display matching files when tab completing 
 set encoding=utf-8
 set clipboard=unnamedplus
+set background=dark "Required to make colorscheme work inside tmux
+set t_Co=256 "Required to make colorscheme work inside tmux
 syntax enable
-let g:powerline_pycmd="py3"
-let mapleader = ""
+let mapleader = ","
 filetype plugin on
 filetype indent on
 colorscheme monokai-bold
 
-" SETTINGS BELLOW ARE FROM https://github.com/neoclide/coc.nvim#example-vim-configuration 
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+
+" SETTINGS FOR COC OR TO IMPROVE COC
+
+"https://github.com/neoclide/coc.nvim/wiki/Using-the-configuration-file
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " if hidden is not set, TextEdit might fail.
 set hidden
