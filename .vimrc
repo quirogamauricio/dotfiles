@@ -4,10 +4,16 @@ set nocompatible "Tell Vim it doesn't need to try to be compatible with Vi
 set rtp+=/usr/bin/fzf
 set laststatus=2
 set relativenumber
+set number
 set hls
 set path+=** "Tell Vim to search recursively in subfolders of the working directory when using :find
 set wildmenu "Display matching files when tab completing 
 set clipboard=unnamed
+" faster redrawing
+set ttyfast
+" detect when a file is changed
+set autoread 
+
 syntax enable
 let g:powerline_pycmd="py3"
 colorscheme monokai-bold
