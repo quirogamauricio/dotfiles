@@ -4,28 +4,46 @@ set nocompatible "Tell Vim it doesn't need to try to be compatible with Vi
 set rtp+=/usr/bin/fzf
 set laststatus=2
 set relativenumber
+set number
 set hls
 set path+=** "Tell Vim to search recursively in subfolders of the working directory when using :find
 set wildmenu "Display matching files when tab completing 
-set encoding=utf-8
-set clipboard=unnamedplus
-set background=dark "Required to make colorscheme work inside tmux
-set t_Co=256 "Required to make colorscheme work inside tmux
+" faster redrawing
+set ttyfast
+" detect when a file is changed
+set autoread 
 syntax enable
 set noswapfile
 let mapleader = ","
-filetype plugin on
-filetype indent on
+let g:powerline_pycmd="py3"
 colorscheme monokai-bold
 
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+"START SETTINGS REQUIRED BY Vundle
+filetype off                  " required
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" SETTINGS FOR COC OR TO IMPROVE COC
+"" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
-"https://github.com/neoclide/coc.nvim/wiki/Using-the-configuration-file
-autocmd FileType json syntax match Comment +\/\/.\+$+
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+"END SETTINGS REQUIRED BY Vundle
+
+" SETTINGS BELLOW ARE FROM https://github.com/neoclide/coc.nvim#example-vim-configuration 
 
 " if hidden is not set, TextEdit might fail.
 set hidden
