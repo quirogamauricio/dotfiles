@@ -18,8 +18,12 @@ set ttyfast
 set autoread 
 syntax enable
 set noswapfile
-let mapleader = ","
-let g:powerline_pycmd="py3"
+let mapleader=","
+
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+
 colorscheme monokai-bold
 
 "START SETTINGS REQUIRED BY Vundle
@@ -33,6 +37,7 @@ call vundle#begin()
 "" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-vinegar'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
