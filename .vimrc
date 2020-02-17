@@ -12,6 +12,7 @@ set clipboard=unnamedplus
 set background=dark "Required to make colorscheme work inside tmux
 set t_Co=256 "Required to make colorscheme work inside tmux
 syntax enable
+set noswapfile
 let mapleader = ","
 filetype plugin on
 filetype indent on
@@ -122,8 +123,8 @@ omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
 " Use <TAB> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <TAB> <Plug>(coc-range-select)
+" nmap <silent> <TAB> <Plug>(coc-range-select)
+" xmap <silent> <TAB> <Plug>(coc-range-select)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
