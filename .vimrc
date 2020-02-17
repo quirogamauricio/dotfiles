@@ -8,6 +8,10 @@ set number
 set hls
 set path+=** "Tell Vim to search recursively in subfolders of the working directory when using :find
 set wildmenu "Display matching files when tab completing 
+set encoding=utf-8
+set clipboard=unnamedplus  
+set background=dark "Required to make colorscheme work inside tmux
+set t_Co=256 "Required to make colorscheme work inside tmux
 " faster redrawing
 set ttyfast
 " detect when a file is changed
