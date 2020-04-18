@@ -2,6 +2,7 @@
 
 set nocompatible "Tell Vim it doesn't need to try to be compatible with Vi
 set rtp+=/usr/bin/fzf
+map <c-p> :FZF<cr>
 set laststatus=2
 set relativenumber
 set number
@@ -24,7 +25,11 @@ python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
 
-colorscheme monokai-bold
+" colorscheme monokai-bold
+  colorscheme mac_classic
+
+"map jsdoc plugin (https://github.com/heavenshell/vim-jsdoc)
+nmap <silent> <C-l> <Plug>(jsdoc)
 
 "START SETTINGS REQUIRED BY Vundle
 filetype off                  " required
@@ -38,6 +43,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-vinegar'
+Plugin 'heavenshell/vim-jsdoc'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
