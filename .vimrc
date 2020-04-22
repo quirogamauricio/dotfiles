@@ -46,6 +46,8 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'Raimondi/delimitMate'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
