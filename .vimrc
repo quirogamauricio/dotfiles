@@ -17,16 +17,20 @@ set t_Co=256 "Required to make colorscheme work inside tmux
 set ttyfast
 " detect when a file is changed
 set autoread 
-syntax enable
 set noswapfile
+set showtabline=2 " Always display the tabline, even if there is only one tab
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+syntax enable
 let mapleader=","
 
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
 
-" colorscheme monokai-bold
-  colorscheme mac_classic
+colorscheme spacecamp
+
+" Transparent background
+hi Normal ctermbg=none 
 
 "map jsdoc plugin (https://github.com/heavenshell/vim-jsdoc)
 nmap <silent> <C-l> <Plug>(jsdoc)
@@ -173,7 +177,7 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" set statusline=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Using CocList
 " Show all diagnostics
