@@ -11,7 +11,6 @@ set path+=** "Tell Vim to search recursively in subfolders of the working direct
 set wildmenu "Display matching files when tab completing 
 set encoding=utf-8
 set clipboard=unnamedplus  
-set background=dark "Required to make colorscheme work inside tmux
 set t_Co=256 "Required to make colorscheme work inside tmux
 " faster redrawing
 set ttyfast
@@ -27,44 +26,47 @@ python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
 
-colorscheme spacecamp
+"map jsdoc plugin (https://github.com/heavenshell/vim-jsdoc)
+nmap <silent> <C-l> <Plug>(jsdoc)
+
+
+"Automatic installation of vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" START SETTINGS REQUIRED BY vim-plug
+
+" Specify a directory for plugins
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-vinegar'
+Plug 'heavenshell/vim-jsdoc'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'mattn/emmet-vim'
+Plug 'Raimondi/delimitMate'
+Plug 'rakr/vim-one'
+
+" Initialize plugin system
+call plug#end()
+
+" END SETTINGS REQUIRED BY vim-plug
+
+colorscheme one
+set background=dark "Required to make colorscheme work inside tmux
+" colorscheme spacecamp
+" colorscheme default
 
 " Transparent background
 hi Normal ctermbg=none 
 
-"map jsdoc plugin (https://github.com/heavenshell/vim-jsdoc)
-nmap <silent> <C-l> <Plug>(jsdoc)
-
-"START SETTINGS REQUIRED BY Vundle
-filetype off                  " required
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-"" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-vinegar'
-Plugin 'heavenshell/vim-jsdoc'
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plugin 'junegunn/fzf.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'Raimondi/delimitMate'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-"END SETTINGS REQUIRED BY Vundle
 
 " SETTINGS BELLOW ARE FROM https://github.com/neoclide/coc.nvim#example-vim-configuration 
 
