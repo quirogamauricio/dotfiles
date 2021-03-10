@@ -3,6 +3,7 @@
 set nocompatible "Tell Vim it doesn't need to try to be compatible with Vi
 set rtp+=/usr/bin/fzf
 map <c-p> :FZF<cr>
+let g:fzf_layout = {'down':'30%'}
 set laststatus=2
 set relativenumber
 set number
