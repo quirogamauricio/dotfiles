@@ -20,7 +20,8 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 HISTFILE=~/.zhistory
 HISTSIZE=100000
 SAVEHIST=100000
-#export EDITOR=/usr/bin/nano
+
+export EDITOR=/usr/bin/vim
 #export VISUAL=/usr/bin/nano
 WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
 
