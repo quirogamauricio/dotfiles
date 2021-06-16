@@ -8,6 +8,7 @@
     "html",
     "typescript",
     "graphql",
-    "scss"
+    "scss",
+    "yml"
   ]
 }
