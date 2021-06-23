@@ -64,6 +64,7 @@ alias g='git'
 alias aws='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
 alias aws-local='docker run --network host --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
 . ~/dotfiles/private/aliases
+alias cat='bat'
 
 # Theming section  
 autoload -U compinit colors zcalc
