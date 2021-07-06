@@ -37,7 +37,8 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id ~/.config/polybar/forest/scripts/launcher.sh
 
 # launch categorized menu
-bindsym $mod+z exec --no-startup-id morc_menu
+# bindsym $mod+z exec --no-startup-id morc_menu
+bindsym $mod+z exec rofi -no-config -no-lazy-grab -show window -theme ~/.config/polybar/forest/scripts/rofi/launcher.rasi
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
