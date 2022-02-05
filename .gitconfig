@@ -2,3 +2,8 @@
 	ff = only
 [core]
 	editor = vim
+[color "diff"]
+        meta = magenta
+        old = black red strike
+        new = black green italic
+	context = white
