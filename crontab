@@ -1,0 +1,12 @@
+DISPLAY=:0
+XDG_SESSION_DESKTOP=gnome
+XDG_SESSION_TYPE=wayland
+DESKTOP_SESSION=gnome
+XDG_CURRENT_DESKTOP=GNOME
+WAYLAND_DISPLAY=wayland-0
+GNOME_SETUP_DISPLAY=:1
+GDMSESSION=gnome
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+
+* * * * * gsettings set org.gnome.desktop.background picture-uri  file://$(find $HOME/Pictures/Wallpapers -type f | shuf -n 1)
+
