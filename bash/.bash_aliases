@@ -10,6 +10,7 @@ alias mv='mv -iv'
 alias g='git'
 alias gup='git remote update origin && git pull'
 alias gmm='git remote update origin && git merge origin/master'
+alias grm='git remote update origin && git rebase master'
 alias gcm='git checkout master && git remote update origin && git pull'
 
 
