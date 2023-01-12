@@ -8,6 +8,7 @@ alias mv='mv -iv'
 
 # Git
 alias g='git'
+alias gs='git status'
 alias gup='git remote update origin && git pull'
 alias gmm='git remote update origin && git merge origin/master'
 alias grm='git remote update origin && git rebase master'
