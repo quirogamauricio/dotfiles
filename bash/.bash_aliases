@@ -13,6 +13,7 @@ alias gup='git remote update origin && git pull'
 alias gmm='git remote update origin && git merge origin/master'
 alias grm='git remote update origin && git rebase master'
 alias gcm='git checkout master && git remote update origin && git pull'
+alias gla='git clean -ffdx' # Remove untracked AND ignored files recursively, including nested Git repositories.
 
 # Docker
 alias docker='sudo docker'
