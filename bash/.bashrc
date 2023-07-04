@@ -19,7 +19,7 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=10000
+HISTSIZE=1000000
 HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
@@ -119,3 +119,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export XDG_CONFIG_HOME="$HOME/.config"
+
+# Have bash immediately add commands to the history instead of waiting for the end of each session (to enable commands in one terminal to be instantly be available in another).
+# 1. Append to the history file immediately with history -a.
+# 2. Clear the current history in the shell session with history -c.
+# 3. Load the updated history back into the shell session with the history -r command.
+
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
